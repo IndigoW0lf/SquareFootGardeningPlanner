@@ -1,0 +1,6 @@
+{
+  "black-formatter.args": [
+    "\"[python]\": {     \"editor.formatOnPaste\": false }",
+    "\"[python]\": { \"editor.formatOnSaveMode\": \"file\" }"
+  ]
+}
