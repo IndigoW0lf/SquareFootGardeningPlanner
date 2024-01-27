@@ -1,17 +1,17 @@
-from flask import Flask, jsonify
-from api import trefle
+from flask import Flask
+from dotenv import load_dotenv
+from config import Config
 
+load_dotenv()
 app = Flask(__name__)
+app.config.from_object(Config)
 
-@app.route('/api/plants')
-def plants():
-    plants_data = trefle.get_plants()
-    return jsonify(plants_data)
+# Define routes
+@app.route('/')
+def index():
+    return "Hello, World!"
 
-@app.route('/api/plants/<int:plant_id>')
-def plant_details(plant_id):
-    plant_data = trefle.get_plant_details(plant_id)
-    return jsonify(plant_data) if plant_data else ('', 404)
+# More route definitions
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,7 +1,9 @@
 import requests
+from config import Config
 
 TREFLE_API_URL = "https://api.trefle.io/api/v1/plants"
-TREFLE_TOKEN = "your_trefle_api_token_here"
+TREFLE_TOKEN = Config.TREFLE_API_TOKEN
+
 
 def get_plants(page=1):
     """ Fetch a list of plants """
