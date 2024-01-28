@@ -1,4 +1,4 @@
-```python
+from flask import abort, app, jsonify
 import pandas as pd
 
 df = pd.read_csv('zip_zone.csv')  # Load zone lookup dataframe
@@ -16,4 +16,3 @@ def get_zone(zip_code):
         abort(404)  # Zone not found
     
     return jsonify({'zone': zone})
-```
